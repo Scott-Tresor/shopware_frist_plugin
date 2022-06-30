@@ -1,0 +1,19 @@
+{
+  "name": "swag/first-plugin",
+  "description": "First Plugin",
+  "version": "0.0.1",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SwagFristPlugin\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "SwagFristPlugin\\SwagFristPlugin",
+    "label": {
+      "de-DE": "Skeleton plugin",
+      "en-GB": "Skeleton plugin"
+    }
+  }
+}

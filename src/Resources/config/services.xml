@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="SwagFristPlugin\Core\Content\FristPlugin\Aggregate\FristPluginTranslation\FristPluginTranslationDefinition">
+            <tag name="shopware.entity.definition" entity="swag_frist_plugin" />
+        </service>
+
+        <service id="SwagFristPlugin\StoreFront\Controller\Api\DemonDataController" public="true">
+            <argument id="swag_frist_plugin.repository" type="service" />
+
+            <call method="setContainer">
+                <argument id="service_container" type="service" />
+            </call>
+        </service>
+
+        <service id="SwagFristPlugin\Subscriber\FristPluginSubscriber">
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service" />
+            <argument id="swag_frist_plugin.repository" type="service" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+    </services>
+</container>
