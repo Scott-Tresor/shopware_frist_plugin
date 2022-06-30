@@ -31,7 +31,7 @@ class FristPluginSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            FooterPageletLoadedEvent::class => 'onFooterPageletLoader'
+            FooterPageletLoadedEvent::class => 'onFooterPageletLoader',
         ];
     }
 
